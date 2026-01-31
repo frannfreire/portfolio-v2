@@ -2,37 +2,60 @@
 ---
 
 <section class="hero">
-	<div class="status">
-		<span class="dot"></span>
-		Disponible para trabajar
-	</div>
-	
-	<h1>
-		Hola, soy <span class="name">Francisco Freire</span>
-	</h1>
-	
-	<p class="tagline">
-		<strong>Software Engineer</strong> con +4 años de experiencia.
-		Especializado en <span class="highlight">bots cross-platform</span>, 
-		<span class="highlight">aplicaciones web y mobile</span>, 
-		e <span class="highlight">inteligencia artificial aplicada a negocios</span>.
-	</p>
+	<div class="hero-content">
+		<div class="status">
+			<span class="dot"></span>
+			AVAILABLE FOR WORK
+		</div>
+		
+		<h1>
+			<span class="line1">FRANCISCO</span>
+			<span class="line2">FREIRE<span class="accent">.</span></span>
+		</h1>
+		
+		<div class="tagline">
+			<div class="brush-stroke"></div>
+			<p>
+				<strong>SOFTWARE ENGINEER</strong> — +4 años construyendo 
+				<span class="highlight">bots</span>, <span class="highlight">apps</span> 
+				e <span class="highlight">IA para negocios</span>
+			</p>
+		</div>
 
-	<div class="location">
-		📍 Uruguay
+		<div class="meta">
+			<span class="location">📍 URUGUAY</span>
+			<span class="divider">/</span>
+			<span class="year">2021—2025</span>
+		</div>
+
+		<div class="cta">
+			<a href="#contacto" class="btn primary">CONTACTAR</a>
+			<a href="https://github.com/frannfreire" target="_blank" class="btn ghost">GITHUB ↗</a>
+			<a href="https://linkedin.com/in/frannfreire" target="_blank" class="btn ghost">LINKEDIN ↗</a>
+		</div>
 	</div>
 
-	<div class="cta">
-		<a href="#contacto" class="btn primary">Contactar</a>
-		<a href="https://github.com/frannfreire" target="_blank" class="btn secondary">GitHub</a>
-		<a href="https://linkedin.com/in/frannfreire" target="_blank" class="btn secondary">LinkedIn</a>
+	<div class="hero-decoration">
+		<div class="circle"></div>
+		<div class="lines">
+			<span></span><span></span><span></span>
+		</div>
 	</div>
 </section>
 
 <style>
 	.hero {
+		min-height: 90vh;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		padding: 4rem 0;
-		text-align: center;
+		position: relative;
+	}
+
+	.hero-content {
+		flex: 1;
+		max-width: 800px;
 	}
 
 	.status {
@@ -40,89 +63,169 @@
 		align-items: center;
 		gap: 0.5rem;
 		padding: 0.5rem 1rem;
-		background: rgba(34, 197, 94, 0.1);
-		border: 1px solid rgba(34, 197, 94, 0.3);
-		border-radius: 2rem;
-		color: var(--success);
-		font-size: 0.875rem;
-		font-weight: 500;
+		background: transparent;
+		border: 1px solid var(--accent);
+		color: var(--accent);
+		font-size: 0.75rem;
+		font-weight: 600;
+		letter-spacing: 0.2em;
 		margin-bottom: 2rem;
 	}
 
 	.dot {
-		width: 8px;
-		height: 8px;
-		background: var(--success);
+		width: 6px;
+		height: 6px;
+		background: var(--accent);
 		border-radius: 50%;
-		animation: pulse 2s infinite;
+		animation: pulse 1.5s infinite;
 	}
 
 	@keyframes pulse {
-		0%, 100% { opacity: 1; }
-		50% { opacity: 0.5; }
+		0%, 100% { opacity: 1; transform: scale(1); }
+		50% { opacity: 0.5; transform: scale(1.2); }
 	}
 
 	h1 {
-		font-size: clamp(2rem, 5vw, 3.5rem);
-		font-weight: 700;
-		margin-bottom: 1.5rem;
+		font-size: clamp(4rem, 12vw, 10rem);
+		margin-bottom: 2rem;
+		position: relative;
 	}
 
-	.name {
-		background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-clip: text;
+	.line1, .line2 {
+		display: block;
+	}
+
+	.line2 {
+		margin-left: 2rem;
+	}
+
+	.accent {
+		color: var(--accent);
 	}
 
 	.tagline {
-		font-size: 1.25rem;
+		position: relative;
+		padding: 1.5rem 0;
+		margin-bottom: 2rem;
+	}
+
+	.brush-stroke {
+		position: absolute;
+		left: -1rem;
+		top: 0;
+		width: 4px;
+		height: 100%;
+		background: var(--accent);
+	}
+
+	.tagline p {
+		font-size: 1.125rem;
 		color: var(--text-secondary);
-		max-width: 700px;
-		margin: 0 auto 1rem;
+		padding-left: 1rem;
 	}
 
 	.highlight {
 		color: var(--text-primary);
+		font-weight: 600;
 	}
 
-	.location {
+	.meta {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		font-size: 0.875rem;
 		color: var(--text-secondary);
-		margin-bottom: 2rem;
+		letter-spacing: 0.1em;
+		margin-bottom: 3rem;
+	}
+
+	.divider {
+		color: var(--accent);
 	}
 
 	.cta {
 		display: flex;
 		gap: 1rem;
-		justify-content: center;
 		flex-wrap: wrap;
 	}
 
 	.btn {
-		padding: 0.75rem 1.5rem;
-		border-radius: 0.5rem;
-		font-weight: 500;
-		transition: all 0.2s;
+		padding: 1rem 2rem;
+		font-size: 0.875rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		transition: all 0.3s;
 	}
 
 	.btn.primary {
 		background: var(--accent);
-		color: white;
+		color: var(--bg-primary);
 	}
 
 	.btn.primary:hover {
-		background: var(--accent-hover);
-		transform: translateY(-2px);
+		background: var(--text-primary);
+		transform: translateX(4px);
 	}
 
-	.btn.secondary {
-		background: var(--bg-card);
+	.btn.ghost {
+		background: transparent;
 		border: 1px solid var(--border);
 		color: var(--text-primary);
 	}
 
-	.btn.secondary:hover {
+	.btn.ghost:hover {
 		border-color: var(--accent);
-		transform: translateY(-2px);
+		color: var(--accent);
+	}
+
+	.hero-decoration {
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%);
+		opacity: 0.1;
+	}
+
+	.circle {
+		width: 400px;
+		height: 400px;
+		border: 2px solid var(--accent);
+		border-radius: 50%;
+	}
+
+	.lines {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	.lines span {
+		display: block;
+		width: 200px;
+		height: 2px;
+		background: var(--accent);
+		margin: 2rem 0;
+		transform: rotate(-45deg);
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			min-height: auto;
+			padding: 2rem 0;
+		}
+
+		h1 {
+			font-size: 3rem;
+		}
+
+		.line2 {
+			margin-left: 0;
+		}
+
+		.hero-decoration {
+			display: none;
+		}
 	}
 </style>

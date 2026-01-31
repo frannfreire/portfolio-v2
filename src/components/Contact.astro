@@ -2,103 +2,139 @@
 ---
 
 <section id="contacto">
-	<h2>Contacto</h2>
+	<div class="section-header">
+		<span class="section-index">05</span>
+		<h2>LET'S TALK<span class="accent">.</span></h2>
+	</div>
 	
-	<div class="contact-card">
-		<p>
-			¿Tenés un proyecto en mente? ¿Necesitás automatizar algo o integrar IA en tu negocio?
+	<div class="contact-content">
+		<p class="cta-text">
+			¿Proyecto en mente? ¿Automatización? ¿IA para tu negocio?
 		</p>
 		
-		<div class="links">
-			<a href="mailto:frannfreire@gmail.com" class="contact-link">
-				<span class="icon">📧</span>
-				<span>frannfreire@gmail.com</span>
+		<div class="contact-grid">
+			<a href="mailto:frannfreire@gmail.com" class="contact-item">
+				<span class="label">EMAIL</span>
+				<span class="value">frannfreire@gmail.com</span>
 			</a>
-			<a href="https://t.me/frannfreire" target="_blank" class="contact-link">
-				<span class="icon">💬</span>
-				<span>@frannfreire</span>
+			<a href="https://t.me/frannfreire" target="_blank" class="contact-item">
+				<span class="label">TELEGRAM</span>
+				<span class="value">@frannfreire</span>
 			</a>
-			<a href="https://github.com/frannfreire" target="_blank" class="contact-link">
-				<span class="icon">🐙</span>
-				<span>GitHub</span>
+			<a href="https://github.com/frannfreire" target="_blank" class="contact-item">
+				<span class="label">GITHUB</span>
+				<span class="value">frannfreire ↗</span>
 			</a>
-			<a href="https://linkedin.com/in/frannfreire" target="_blank" class="contact-link">
-				<span class="icon">💼</span>
-				<span>LinkedIn</span>
+			<a href="https://linkedin.com/in/frannfreire" target="_blank" class="contact-item">
+				<span class="label">LINKEDIN</span>
+				<span class="value">frannfreire ↗</span>
 			</a>
 		</div>
 	</div>
 </section>
 
 <footer>
-	<p>© 2025 Francisco Freire. Hecho con Astro 🚀</p>
+	<div class="footer-content">
+		<span class="copyright">© 2025 FRANCISCO FREIRE</span>
+		<span class="made-with">BUILT WITH ASTRO</span>
+	</div>
 </footer>
 
 <style>
 	section {
-		padding: 2rem 0;
+		padding: 6rem 0;
+	}
+
+	.section-header {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.section-index {
+		font-family: 'Anton', sans-serif;
+		font-size: 1rem;
+		color: var(--accent);
+		letter-spacing: 0.1em;
 	}
 
 	h2 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
+		font-size: clamp(3rem, 8vw, 6rem);
 	}
 
-	h2::before {
-		content: "📬";
+	.accent {
+		color: var(--accent);
 	}
 
-	.contact-card {
-		background: var(--bg-card);
-		border: 1px solid var(--border);
-		border-radius: 1rem;
-		padding: 2rem;
-		text-align: center;
-	}
-
-	.contact-card > p {
+	.cta-text {
+		font-size: 1.25rem;
 		color: var(--text-secondary);
-		font-size: 1.125rem;
-		margin-bottom: 2rem;
+		margin-bottom: 3rem;
+		max-width: 500px;
 	}
 
-	.links {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
+	.contact-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 		gap: 1rem;
 	}
 
-	.contact-link {
+	.contact-item {
 		display: flex;
-		align-items: center;
+		flex-direction: column;
 		gap: 0.5rem;
-		padding: 0.75rem 1.25rem;
-		background: var(--bg-secondary);
+		padding: 2rem;
+		background: var(--bg-card);
 		border: 1px solid var(--border);
-		border-radius: 0.5rem;
+		transition: all 0.3s;
 		color: var(--text-primary);
-		transition: all 0.2s;
 	}
 
-	.contact-link:hover {
+	.contact-item:hover {
 		border-color: var(--accent);
-		transform: translateY(-2px);
+		transform: translateX(8px);
 	}
 
-	.icon {
-		font-size: 1.25rem;
+	.label {
+		font-size: 0.625rem;
+		letter-spacing: 0.2em;
+		color: var(--text-secondary);
+	}
+
+	.value {
+		font-family: 'Anton', sans-serif;
+		font-size: 1.125rem;
+		letter-spacing: 0.02em;
+	}
+
+	.contact-item:hover .value {
+		color: var(--accent);
 	}
 
 	footer {
-		text-align: center;
-		padding: 3rem 0;
-		color: var(--text-secondary);
-		font-size: 0.875rem;
+		padding: 4rem 0;
 		border-top: 1px solid var(--border);
-		margin-top: 2rem;
+	}
+
+	.footer-content {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 0.75rem;
+		letter-spacing: 0.1em;
+		color: var(--text-secondary);
+	}
+
+	@media (max-width: 768px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.footer-content {
+			flex-direction: column;
+			gap: 1rem;
+			text-align: center;
+		}
 	}
 </style>

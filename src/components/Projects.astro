@@ -1,71 +1,83 @@
 ---
 const projects = [
 	{
-		name: "Portfolio Personal",
-		description: "Este sitio web. Construido con Astro para máximo rendimiento.",
-		tech: ["Astro", "CSS"],
-		link: "#"
+		name: "PORTFOLIO V2",
+		description: "Este sitio. Diseño inspirado en portfolios creativos con estética dark y acentos neón.",
+		tech: ["ASTRO", "CSS"],
+		index: "01"
 	}
 ];
 ---
 
 <section id="proyectos">
-	<h2>Proyectos</h2>
+	<div class="section-header">
+		<span class="section-index">04</span>
+		<h2>PROJECTS</h2>
+	</div>
 	
 	<div class="projects-grid">
 		{projects.map((project) => (
 			<article class="project-card">
-				<h3>{project.name}</h3>
-				<p>{project.description}</p>
-				<div class="tech-tags">
-					{project.tech.map((t) => (
-						<span class="tech">{t}</span>
-					))}
+				<div class="project-index">{project.index}</div>
+				<div class="project-content">
+					<h3>{project.name}</h3>
+					<p>{project.description}</p>
+					<div class="tech-tags">
+						{project.tech.map((t) => (
+							<span class="tech">{t}</span>
+						))}
+					</div>
 				</div>
-				{project.link && project.link !== "#" && (
-					<a href={project.link} target="_blank" class="project-link">
-						Ver proyecto →
-					</a>
-				)}
 			</article>
 		))}
+		
+		<article class="project-card coming-soon">
+			<div class="project-index">++</div>
+			<div class="project-content">
+				<h3>MORE COMING<span class="accent">.</span></h3>
+				<p>Proyectos de AI, automatización y más en desarrollo.</p>
+			</div>
+		</article>
 	</div>
-
-	<p class="note">
-		💡 Más proyectos próximamente...
-	</p>
 </section>
 
 <style>
 	section {
-		padding: 2rem 0;
+		padding: 4rem 0;
+	}
+
+	.section-header {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+
+	.section-index {
+		font-family: 'Anton', sans-serif;
+		font-size: 1rem;
+		color: var(--accent);
+		letter-spacing: 0.1em;
 	}
 
 	h2 {
-		font-size: 2rem;
-		margin-bottom: 2rem;
-		display: flex;
-		align-items: center;
-		gap: 0.75rem;
-	}
-
-	h2::before {
-		content: "🚀";
+		font-size: clamp(2rem, 5vw, 4rem);
 	}
 
 	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: 1.5rem;
-		margin-bottom: 1.5rem;
+		grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+		gap: 2rem;
 	}
 
 	.project-card {
+		display: grid;
+		grid-template-columns: 80px 1fr;
+		gap: 1.5rem;
+		padding: 2rem;
 		background: var(--bg-card);
 		border: 1px solid var(--border);
-		border-radius: 1rem;
-		padding: 1.5rem;
-		transition: all 0.2s;
+		transition: all 0.3s;
 	}
 
 	.project-card:hover {
@@ -73,40 +85,65 @@ const projects = [
 		transform: translateY(-4px);
 	}
 
+	.project-index {
+		font-family: 'Anton', sans-serif;
+		font-size: 3rem;
+		color: var(--border);
+		line-height: 1;
+	}
+
+	.project-card:hover .project-index {
+		color: var(--accent);
+	}
+
 	h3 {
-		font-size: 1.25rem;
-		margin-bottom: 0.5rem;
+		font-size: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+
+	.accent {
+		color: var(--accent);
 	}
 
 	p {
 		color: var(--text-secondary);
-		margin-bottom: 1rem;
+		font-size: 0.875rem;
+		margin-bottom: 1.5rem;
+		line-height: 1.6;
 	}
 
 	.tech-tags {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.5rem;
-		margin-bottom: 1rem;
 	}
 
 	.tech {
-		background: rgba(99, 102, 241, 0.1);
-		border: 1px solid rgba(99, 102, 241, 0.3);
+		background: transparent;
+		border: 1px solid var(--accent);
 		color: var(--accent);
-		padding: 0.25rem 0.5rem;
-		border-radius: 0.25rem;
-		font-size: 0.75rem;
-		font-weight: 500;
+		padding: 0.375rem 0.75rem;
+		font-size: 0.625rem;
+		font-weight: 600;
+		letter-spacing: 0.1em;
 	}
 
-	.project-link {
-		font-weight: 500;
+	.coming-soon {
+		border-style: dashed;
+		opacity: 0.6;
 	}
 
-	.note {
-		text-align: center;
-		color: var(--text-secondary);
-		font-style: italic;
+	.coming-soon:hover {
+		opacity: 1;
+	}
+
+	@media (max-width: 768px) {
+		.projects-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.project-card {
+			grid-template-columns: 60px 1fr;
+		}
 	}
 </style>
