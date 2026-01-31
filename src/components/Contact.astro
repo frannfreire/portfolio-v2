@@ -1,0 +1,104 @@
+---
+---
+
+<section id="contacto">
+	<h2>Contacto</h2>
+	
+	<div class="contact-card">
+		<p>
+			¿Tenés un proyecto en mente? ¿Necesitás automatizar algo o integrar IA en tu negocio?
+		</p>
+		
+		<div class="links">
+			<a href="mailto:frannfreire@gmail.com" class="contact-link">
+				<span class="icon">📧</span>
+				<span>frannfreire@gmail.com</span>
+			</a>
+			<a href="https://t.me/frannfreire" target="_blank" class="contact-link">
+				<span class="icon">💬</span>
+				<span>@frannfreire</span>
+			</a>
+			<a href="https://github.com/frannfreire" target="_blank" class="contact-link">
+				<span class="icon">🐙</span>
+				<span>GitHub</span>
+			</a>
+			<a href="https://linkedin.com/in/frannfreire" target="_blank" class="contact-link">
+				<span class="icon">💼</span>
+				<span>LinkedIn</span>
+			</a>
+		</div>
+	</div>
+</section>
+
+<footer>
+	<p>© 2025 Francisco Freire. Hecho con Astro 🚀</p>
+</footer>
+
+<style>
+	section {
+		padding: 2rem 0;
+	}
+
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	h2::before {
+		content: "📬";
+	}
+
+	.contact-card {
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 1rem;
+		padding: 2rem;
+		text-align: center;
+	}
+
+	.contact-card > p {
+		color: var(--text-secondary);
+		font-size: 1.125rem;
+		margin-bottom: 2rem;
+	}
+
+	.links {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	.contact-link {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.75rem 1.25rem;
+		background: var(--bg-secondary);
+		border: 1px solid var(--border);
+		border-radius: 0.5rem;
+		color: var(--text-primary);
+		transition: all 0.2s;
+	}
+
+	.contact-link:hover {
+		border-color: var(--accent);
+		transform: translateY(-2px);
+	}
+
+	.icon {
+		font-size: 1.25rem;
+	}
+
+	footer {
+		text-align: center;
+		padding: 3rem 0;
+		color: var(--text-secondary);
+		font-size: 0.875rem;
+		border-top: 1px solid var(--border);
+		margin-top: 2rem;
+	}
+</style>

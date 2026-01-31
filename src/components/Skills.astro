@@ -1,0 +1,113 @@
+---
+const skillGroups = [
+	{
+		name: "Frontend",
+		icon: "🎨",
+		skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS", "Astro", "WordPress"]
+	},
+	{
+		name: "Backend",
+		icon: "⚙️",
+		skills: ["Node.js", "Express.js", "Python", "Rust", "Lua", "MongoDB", "MySQL", "SurrealDB", "RESTful APIs"]
+	},
+	{
+		name: "AI & Automation",
+		icon: "🤖",
+		skills: ["LangChain", "Mastra", "n8n", "Make", "Prompt Engineering"]
+	},
+	{
+		name: "DevOps & Tools",
+		icon: "🛠️",
+		skills: ["Git", "GitHub", "Docker", "Portainer", "Grafana", "Prometheus", "Server Management"]
+	},
+	{
+		name: "Especializado",
+		icon: "🎯",
+		skills: ["VR/XR Development", "Responsive Design", "Accessibility", "Scrum", "Kanban"]
+	}
+];
+---
+
+<section id="skills">
+	<h2>Tech Skills</h2>
+	
+	<div class="skills-grid">
+		{skillGroups.map((group) => (
+			<div class="skill-group">
+				<h3>
+					<span class="icon">{group.icon}</span>
+					{group.name}
+				</h3>
+				<div class="tags">
+					{group.skills.map((skill) => (
+						<span class="tag">{skill}</span>
+					))}
+				</div>
+			</div>
+		))}
+	</div>
+</section>
+
+<style>
+	section {
+		padding: 2rem 0;
+	}
+
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	h2::before {
+		content: "🧠";
+	}
+
+	.skills-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 1.5rem;
+	}
+
+	.skill-group {
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 1rem;
+		padding: 1.5rem;
+	}
+
+	h3 {
+		font-size: 1.1rem;
+		margin-bottom: 1rem;
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.icon {
+		font-size: 1.25rem;
+	}
+
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+	}
+
+	.tag {
+		background: var(--bg-secondary);
+		border: 1px solid var(--border);
+		padding: 0.375rem 0.75rem;
+		border-radius: 0.375rem;
+		font-size: 0.875rem;
+		color: var(--text-secondary);
+		transition: all 0.2s;
+	}
+
+	.tag:hover {
+		border-color: var(--accent);
+		color: var(--text-primary);
+	}
+</style>

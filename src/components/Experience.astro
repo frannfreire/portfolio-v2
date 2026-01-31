@@ -1,0 +1,160 @@
+---
+const experiences = [
+	{
+		company: "WeShopU",
+		role: "Developer",
+		period: "Mar 2025 - May 2025",
+		location: "Remote · United States",
+		tasks: [
+			"CRM management en Airtable",
+			"Mantenimiento de Shopify",
+			"Automatización de procesos",
+			"Desarrollo web"
+		]
+	},
+	{
+		company: "VertexStudio",
+		role: "Full Stack Developer",
+		period: "Abr 2021 - Jun 2025",
+		location: "Remote · El Salvador",
+		tasks: [
+			"Desarrollo de realidad virtual web para plataforma de metaverso en healthcare",
+			"Desarrollo de bots para comunidades de Discord",
+			"Code improvements y refactoring"
+		]
+	},
+	{
+		company: "Hospocket",
+		role: "Frontend Developer",
+		period: "Feb 2021 - Abr 2021",
+		location: "Remote · United States",
+		tasks: [
+			"Desarrollo de pantallas y componentes UI con React y Chakra",
+			"Integración de diseño responsive",
+			"Bug fixing en frontend"
+		]
+	}
+];
+---
+
+<section id="experiencia">
+	<h2>Experiencia</h2>
+	
+	<div class="timeline">
+		{experiences.map((exp) => (
+			<article class="exp-card">
+				<div class="exp-header">
+					<div>
+						<h3>{exp.company}</h3>
+						<p class="role">{exp.role}</p>
+					</div>
+					<div class="exp-meta">
+						<span class="period">{exp.period}</span>
+						<span class="location">{exp.location}</span>
+					</div>
+				</div>
+				<ul class="tasks">
+					{exp.tasks.map((task) => (
+						<li>{task}</li>
+					))}
+				</ul>
+			</article>
+		))}
+	</div>
+</section>
+
+<style>
+	section {
+		padding: 2rem 0;
+	}
+
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 2rem;
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	h2::before {
+		content: "💼";
+	}
+
+	.timeline {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.exp-card {
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		border-radius: 1rem;
+		padding: 1.5rem;
+		transition: border-color 0.2s;
+	}
+
+	.exp-card:hover {
+		border-color: var(--accent);
+	}
+
+	.exp-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		margin-bottom: 1rem;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
+	h3 {
+		font-size: 1.25rem;
+		margin-bottom: 0.25rem;
+	}
+
+	.role {
+		color: var(--accent);
+		font-weight: 500;
+	}
+
+	.exp-meta {
+		text-align: right;
+		color: var(--text-secondary);
+		font-size: 0.875rem;
+	}
+
+	.period {
+		display: block;
+		font-weight: 500;
+	}
+
+	.tasks {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.tasks li {
+		color: var(--text-secondary);
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	.tasks li::before {
+		content: "✓";
+		position: absolute;
+		left: 0;
+		color: var(--success);
+	}
+
+	@media (max-width: 600px) {
+		.exp-header {
+			flex-direction: column;
+		}
+
+		.exp-meta {
+			text-align: left;
+		}
+	}
+</style>

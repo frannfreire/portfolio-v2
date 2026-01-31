@@ -1,0 +1,128 @@
+---
+---
+
+<section class="hero">
+	<div class="status">
+		<span class="dot"></span>
+		Disponible para trabajar
+	</div>
+	
+	<h1>
+		Hola, soy <span class="name">Francisco Freire</span>
+	</h1>
+	
+	<p class="tagline">
+		<strong>Software Engineer</strong> con +4 años de experiencia.
+		Especializado en <span class="highlight">bots cross-platform</span>, 
+		<span class="highlight">aplicaciones web y mobile</span>, 
+		e <span class="highlight">inteligencia artificial aplicada a negocios</span>.
+	</p>
+
+	<div class="location">
+		📍 Uruguay
+	</div>
+
+	<div class="cta">
+		<a href="#contacto" class="btn primary">Contactar</a>
+		<a href="https://github.com/frannfreire" target="_blank" class="btn secondary">GitHub</a>
+		<a href="https://linkedin.com/in/frannfreire" target="_blank" class="btn secondary">LinkedIn</a>
+	</div>
+</section>
+
+<style>
+	.hero {
+		padding: 4rem 0;
+		text-align: center;
+	}
+
+	.status {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.5rem 1rem;
+		background: rgba(34, 197, 94, 0.1);
+		border: 1px solid rgba(34, 197, 94, 0.3);
+		border-radius: 2rem;
+		color: var(--success);
+		font-size: 0.875rem;
+		font-weight: 500;
+		margin-bottom: 2rem;
+	}
+
+	.dot {
+		width: 8px;
+		height: 8px;
+		background: var(--success);
+		border-radius: 50%;
+		animation: pulse 2s infinite;
+	}
+
+	@keyframes pulse {
+		0%, 100% { opacity: 1; }
+		50% { opacity: 0.5; }
+	}
+
+	h1 {
+		font-size: clamp(2rem, 5vw, 3.5rem);
+		font-weight: 700;
+		margin-bottom: 1.5rem;
+	}
+
+	.name {
+		background: linear-gradient(135deg, var(--accent) 0%, #a855f7 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+	}
+
+	.tagline {
+		font-size: 1.25rem;
+		color: var(--text-secondary);
+		max-width: 700px;
+		margin: 0 auto 1rem;
+	}
+
+	.highlight {
+		color: var(--text-primary);
+	}
+
+	.location {
+		color: var(--text-secondary);
+		margin-bottom: 2rem;
+	}
+
+	.cta {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.btn {
+		padding: 0.75rem 1.5rem;
+		border-radius: 0.5rem;
+		font-weight: 500;
+		transition: all 0.2s;
+	}
+
+	.btn.primary {
+		background: var(--accent);
+		color: white;
+	}
+
+	.btn.primary:hover {
+		background: var(--accent-hover);
+		transform: translateY(-2px);
+	}
+
+	.btn.secondary {
+		background: var(--bg-card);
+		border: 1px solid var(--border);
+		color: var(--text-primary);
+	}
+
+	.btn.secondary:hover {
+		border-color: var(--accent);
+		transform: translateY(-2px);
+	}
+</style>

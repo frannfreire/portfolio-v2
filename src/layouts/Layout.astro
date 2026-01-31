@@ -1,0 +1,89 @@
+---
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Francisco Freire - Software Engineer especializado en IA, bots y aplicaciones web/mobile" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<main>
+			<slot />
+		</main>
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		--bg-primary: #0a0a0f;
+		--bg-secondary: #12121a;
+		--bg-card: #1a1a24;
+		--text-primary: #ffffff;
+		--text-secondary: #a0a0b0;
+		--accent: #6366f1;
+		--accent-hover: #818cf8;
+		--success: #22c55e;
+		--border: #2a2a3a;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	html {
+		font-family: 'Inter', system-ui, sans-serif;
+		background: var(--bg-primary);
+		color: var(--text-primary);
+		scroll-behavior: smooth;
+	}
+
+	body {
+		min-height: 100vh;
+		line-height: 1.6;
+	}
+
+	main {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	section {
+		margin-bottom: 5rem;
+	}
+
+	h1, h2, h3 {
+		line-height: 1.2;
+	}
+
+	a {
+		color: var(--accent);
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+
+	a:hover {
+		color: var(--accent-hover);
+	}
+
+	@media (max-width: 768px) {
+		main {
+			padding: 1rem;
+		}
+	}
+</style>
